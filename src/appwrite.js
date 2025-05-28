@@ -17,7 +17,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
             Query.equal('searchTerm', searchTerm),
         ])
 
-        if (Array.isArray(result?.documents) && result.documents.length > 0) {
+        if (result.documents.length > 0) {
             const doc=result.documents[0];
             await database.updateDocument(DATABASE_ID, COLLECTION_ID, doc.$id, {
                 count: doc.count+1,

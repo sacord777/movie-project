@@ -89,7 +89,7 @@ const App = () => {
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
-        {trendingMovies.length > 0 && (
+        {trendingMovies.length > 0 ? (
           <section className='trending'>
             <h2>Tendencias</h2>
             <ul>
@@ -101,6 +101,8 @@ const App = () => {
               ))}
             </ul>
           </section>
+        ) : (
+        <p>Nada en tendencias aún</p>
         )}
 
         <section className='all-movies'>
